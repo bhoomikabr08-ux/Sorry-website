@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>I'm Sorry</title>
+
 <style>
 body{
 text-align:center;
@@ -9,26 +10,62 @@ font-family:Arial;
 background:pink;
 padding-top:100px;
 }
+
 button{
 padding:10px 20px;
 font-size:18px;
+margin-top:20px;
+}
+
+.page{
+display:none;
+}
+
+img{
+width:250px;
+border-radius:20px;
+margin-top:20px;
 }
 </style>
+
 </head>
 
 <body>
 
+<!-- Page 1 -->
+<div id="page1" class="page" style="display:block;">
 <h1>I'm Sorry ❤️</h1>
-<p>I’m so sorry, I didn’t mean to ruin the today. I just want us to be better and be there for each other. I hope u got mg point.Let’s wake up tomorrow with big smiles, back to being us baby shark and baby ass. I love you and miss you so much right now. I wish I could be there to ask what’s wrong and just run my fingers through your hair. </p>
+<button onclick="nextPage(2)">Next</button>
+</div>
 
-<button onclick="msg()">Forgive me?</button>
+<!-- Page 2 -->
+<div id="page2" class="page">
+<p>I’m so sorry, I didn’t mean to ruin the  today. I just want us to be the better . Let’s wake up tomorrow with big smiles, back to being us baby shark and baby ass. I love you and miss you so much right now. I wish I could be there to ask what’s wrong and just run my fingers through your hair.</p>
+<button onclick="nextPage(3)">Next</button>
+</div>
 
+<!-- Page 3 -->
+<div id="page3" class="page">
+<img src="motion_photo_4428090614043448490.jpg">
+<br>
+<button onclick="forgive()">Forgive me?</button>
 <p id="text"></p>
+</div>
 
 <script>
-function msg(){
+
+function nextPage(page){
+document.getElementById("page1").style.display="none";
+document.getElementById("page2").style.display="none";
+document.getElementById("page3").style.display="none";
+
+document.getElementById("page"+page).style.display="block";
+}
+
+function forgive(){
 document.getElementById("text").innerHTML="Thank you for forgiving me ❤️";
 }
+
 </script>
 
 </body>
